@@ -1,7 +1,6 @@
 package strtemplate
 
 import (
-	"log"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -17,9 +16,8 @@ func TestMain(t *testing.T) {
 			templates := "Templates example {{params}}"
 
 			msgout, err := GetString(data, templates)
-			So(*msgout, ShouldEqual, "Templates example Hello")
-			log.Println(*msgout)
 			So(err, ShouldBeNil)
+			So(*msgout, ShouldEqual, "Templates example Hello")
 		})
 	})
 }
