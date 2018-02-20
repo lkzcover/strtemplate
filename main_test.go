@@ -17,6 +17,7 @@ func TestMain(t *testing.T) {
 			templates := "Templates example {{params}}"
 
 			msgout, err := GetString(data, templates)
+			So(*msgout, ShouldEqual, "Templates example Hello")
 			log.Println(*msgout)
 			So(err, ShouldBeNil)
 		})
